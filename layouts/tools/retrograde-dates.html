@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ $css := resources.Get "css/retrograde-dates.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<article class="retrograde-page">
+  <header class="retrograde-hero">
+    <p class="retrograde-eyebrow">ASTRONOMICAL TRACKER</p>
+    <h1>Mercury Retrograde Dates</h1>
+    <p class="retrograde-lede">Calculate Mercury's apparent retrograde periods and explore the traditional astrological themes associated with the current status.</p>
+  </header>
+
+  <section class="retrograde-section">
+    <p class="retrograde-eyebrow">CURRENT STATUS</p>
+    <h2>Mercury right now</h2>
+    <div id="retrograde-current"><p>Calculating Mercury's current motion…</p></div>
+  </section>
+
+  <section class="retrograde-section">
+    <p class="retrograde-eyebrow">TRADITIONAL ASTROLOGY</p>
+    <h2>What does Mercury's status mean?</h2>
+    <div id="retrograde-meaning"><p>Calculating the traditional interpretation…</p></div>
+  </section>
+
+  <section class="retrograde-section">
+    <p class="retrograde-eyebrow">DATE TRACKER</p>
+    <h2>Mercury retrograde periods</h2>
+
+    <form id="retrograde-year-form" class="retrograde-year-form">
+      <label>
+        Year
+        <input id="retrograde-year" type="number" min="1900" max="2100" required>
+      </label>
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="retrograde-periods"><p>Calculating retrograde periods…</p></div>
+  </section>
+
+  <section class="retrograde-section">
+    <p class="retrograde-eyebrow">HOW IT IS CALCULATED</p>
+    <h2>Calculation first. Interpretation second.</h2>
+
+    <div class="retrograde-method-grid">
+      <article class="retrograde-method-card">
+        <span class="retrograde-method-number">01</span>
+        <h3>Planetary position</h3>
+        <p>AstroLight calculates Mercury's geocentric ecliptic longitude for sampled UTC times.</p>
+      </article>
+      <article class="retrograde-method-card">
+        <span class="retrograde-method-number">02</span>
+        <h3>Apparent motion</h3>
+        <p>We measure how Mercury's longitude changes over time and identify reversals in apparent direction.</p>
+      </article>
+      <article class="retrograde-method-card">
+        <span class="retrograde-method-number">03</span>
+        <h3>Station timing</h3>
+        <p>The transition is refined around the point where the calculated apparent longitudinal motion changes direction.</p>
+      </article>
+      <article class="retrograde-method-card">
+        <span class="retrograde-method-number">04</span>
+        <h3>Traditional meaning</h3>
+        <p>The current motion, Mercury's sign and proximity to a station are translated into a clearly labeled astrological reflection.</p>
+      </article>
+    </div>
+
+    <p class="retrograde-important"><strong>Important:</strong> Retrograde is an apparent change in geocentric motion caused by the relative orbital motion of Earth and Mercury. It does not mean Mercury physically reverses its orbit. Astrological interpretations are traditional symbolism, not scientific causation.</p>
+  </section>
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+<script type="module" src="{{ "js/tools/retrograde-dates.js" | relURL }}"></script>
+{{ end }}

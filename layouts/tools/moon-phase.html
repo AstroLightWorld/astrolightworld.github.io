@@ -1,0 +1,177 @@
+{{ define "main" }}
+{{ $css := resources.Get "css/moon-phase.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<article class="moon-phase-page">
+
+  <header class="moon-phase-hero">
+    <p class="moon-phase-eyebrow">ASTRONOMICAL CALENDAR</p>
+
+    <h1>Moon Phase Calendar</h1>
+
+    <p class="moon-phase-lede">
+      Calculate lunar phases from astronomical positions and explore
+      the traditional astrological themes associated with each phase.
+    </p>
+  </header>
+
+
+  <!-- CURRENT MOON -->
+
+  <section class="moon-phase-section">
+
+    <p class="moon-phase-eyebrow">CURRENT MOON</p>
+
+    <h2>The Moon right now</h2>
+
+    <div id="moon-current">
+      <p>Calculating the Moon…</p>
+    </div>
+
+  </section>
+
+
+  <!-- ASTROLOGICAL MEANING -->
+
+  <section class="moon-phase-section">
+
+    <p class="moon-phase-eyebrow">TRADITIONAL ASTROLOGY</p>
+
+    <h2>What does the current phase mean?</h2>
+
+    <div id="moon-meaning">
+      <p>Calculating the traditional interpretation…</p>
+    </div>
+
+  </section>
+
+
+  <!-- YEARLY TRACKER -->
+
+  <section class="moon-phase-section">
+
+    <p class="moon-phase-eyebrow">DATE TRACKER</p>
+
+    <h2>Moon phases</h2>
+
+    <form id="moon-year-form" class="moon-year-form">
+
+      <label>
+        Year
+
+        <input
+          id="moon-year"
+          type="number"
+          min="1900"
+          max="2100"
+          required
+        >
+      </label>
+
+      <button type="submit">
+        Calculate
+      </button>
+
+    </form>
+
+    <div id="moon-phases">
+      <p>Calculating lunar phases…</p>
+    </div>
+
+  </section>
+
+
+  <!-- METHODOLOGY -->
+
+  <section class="moon-phase-section">
+
+    <p class="moon-phase-eyebrow">
+      HOW IT IS CALCULATED
+    </p>
+
+    <h2>Calculation first. Interpretation second.</h2>
+
+    <div class="moon-method-grid">
+
+      <article class="moon-method-card">
+
+        <span>01</span>
+
+        <h3>Sun–Moon geometry</h3>
+
+        <p>
+          AstroLight calculates the geocentric angular relationship
+          between the Sun and Moon.
+        </p>
+
+      </article>
+
+
+      <article class="moon-method-card">
+
+        <span>02</span>
+
+        <h3>Phase angle</h3>
+
+        <p>
+          The angular separation is used to identify the lunar phase
+          and illumination cycle.
+        </p>
+
+      </article>
+
+
+      <article class="moon-method-card">
+
+        <span>03</span>
+
+        <h3>Exact phase timing</h3>
+
+        <p>
+          Phase transitions are refined around the point where the
+          relevant angular relationship reaches its target.
+        </p>
+
+      </article>
+
+
+      <article class="moon-method-card">
+
+        <span>04</span>
+
+        <h3>Traditional meaning</h3>
+
+        <p>
+          The current phase and Moon sign are translated into clearly
+          labeled traditional astrological reflection.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <p class="moon-important">
+
+      <strong>Important:</strong>
+
+      Moon phases are astronomical phenomena caused by the changing
+      Sun–Moon–Earth geometry. Astrological meanings are traditional
+      symbolism, not scientific causation, prediction or guarantees
+      of events.
+
+    </p>
+
+  </section>
+
+</article>
+
+
+<script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+
+<script
+  type="module"
+  src="{{ "js/tools/moon-phase.js" | relURL }}">
+</script>
+
+{{ end }}

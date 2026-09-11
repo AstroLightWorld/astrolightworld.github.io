@@ -1,0 +1,120 @@
+/* AstroLight — Mercury Retrograde Tracker */
+.retrograde-page { max-width: 1120px; margin: 0 auto; padding: 48px 22px 80px; }
+.retrograde-hero { padding: 34px 0 28px; }
+.retrograde-eyebrow { letter-spacing:.14em; font-size:.76rem; opacity:.7; margin-bottom:10px; }
+.retrograde-hero h1 { margin:0 0 14px; font-size:clamp(2.2rem,5vw,4rem); }
+.retrograde-lede { max-width:760px; font-size:1.08rem; line-height:1.7; opacity:.86; }
+.retrograde-section { margin-top:34px; }
+.retrograde-section h2 { margin-bottom:16px; }
+.retrograde-status-card,.retrograde-meaning-card,.retrograde-period,.retrograde-method-card {
+  border:1px solid rgba(255,255,255,.10); border-radius:18px; background:rgba(255,255,255,.035);
+}
+.retrograde-status-card { padding:28px; }
+.retrograde-status-top { display:flex; gap:10px; align-items:center; opacity:.75; }
+.retrograde-direction { font-size:1.8rem; }
+.retrograde-status-card h3 { margin:5px 0 8px; font-size:2rem; }
+.retrograde-sign { font-size:1.15rem; margin-bottom:20px; }
+.retrograde-metrics { display:grid; gap:7px; font-size:.92rem; opacity:.82; }
+.retrograde-timestamp { margin:18px 0 0; font-size:.8rem; opacity:.55; }
+.retrograde-meaning-card { padding:28px; }
+.retrograde-meaning-card h3 { margin-top:0; }
+.retrograde-meaning-card p { line-height:1.7; max-width:850px; }
+.retrograde-disclaimer { margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); font-size:.86rem; opacity:.68; }
+.retrograde-year-form { display:flex; align-items:end; gap:12px; margin-bottom:18px; }
+.retrograde-year-form label { display:grid; gap:7px; font-weight:600; }
+.retrograde-year-form input { width:130px; padding:11px 12px; border-radius:9px; border:1px solid rgba(255,255,255,.15); background:rgba(0,0,0,.2); color:inherit; }
+.retrograde-year-form button { padding:11px 16px; border:0; border-radius:9px; cursor:pointer; }
+.retrograde-periods { display:grid; gap:14px; }
+.retrograde-period { display:grid; grid-template-columns:64px 1fr; gap:18px; padding:22px; }
+.retrograde-period-number { font-size:1.4rem; opacity:.45; }
+.retrograde-period h3 { margin:0 0 8px; }
+.retrograde-period p { margin:6px 0; line-height:1.55; }
+.retrograde-duration,.retrograde-utc { font-size:.84rem; opacity:.65; }
+.retrograde-empty,.retrograde-error { padding:20px; border-radius:12px; background:rgba(255,255,255,.035); }
+.retrograde-error { border:1px solid rgba(255,100,100,.35); }
+.retrograde-method-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.retrograde-method-card { padding:20px; }
+.retrograde-method-number { font-size:.75rem; letter-spacing:.12em; opacity:.5; }
+.retrograde-method-card h3 { margin:9px 0; font-size:1rem; }
+.retrograde-method-card p { font-size:.9rem; line-height:1.55; opacity:.76; }
+.retrograde-important { margin-top:20px; padding:18px; border-left:3px solid currentColor; background:rgba(255,255,255,.03); line-height:1.65; }
+@media (max-width:800px) { .retrograde-method-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) {
+  .retrograde-page { padding:32px 16px 60px; }
+  .retrograde-year-form { align-items:stretch; flex-direction:column; }
+  .retrograde-year-form input,.retrograde-year-form button { width:100%; box-sizing:border-box; }
+  .retrograde-period { grid-template-columns:1fr; }
+  .retrograde-method-grid { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; } }
+
+/* =========================================
+   ASTROLOGICAL IMPACT
+   ========================================= */
+
+.retrograde-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.retrograde-impact-block {
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+}
+
+.retrograde-impact-label {
+  margin: 0 0 12px !important;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  font-weight: 700;
+  opacity: .62;
+}
+
+.retrograde-impact-block ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.retrograde-impact-block li {
+  margin: 0 0 9px;
+  line-height: 1.55;
+}
+
+.retrograde-impact-block li:last-child {
+  margin-bottom: 0;
+}
+
+.retrograde-station-note {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+
+/* Tablet */
+
+@media (max-width: 800px) {
+
+  .retrograde-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 560px) {
+
+  .retrograde-impact-block {
+    padding: 17px;
+  }
+
+}

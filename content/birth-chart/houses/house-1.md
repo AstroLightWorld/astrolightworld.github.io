@@ -2,12 +2,12 @@
 title: "The 1st House: Self & Identity"
 layout: "house-single"
 house: "1"
-description: "Learn what the 1th house represents in traditional astrology and how planets placed there are interpreted."
+description: "Learn what the 1st house represents in traditional astrology and how planets placed there are interpreted."
 ---
 
 ## House 1: Self & Identity
 
-In traditional astrology, the houses divide a birth chart into twelve symbolic areas. The **1th house** is associated with **Self & Identity**.
+In traditional astrology, the houses divide a birth chart into twelve symbolic areas. The **1st house** is associated with **Self & Identity**.
 
 Common themes include:
 
@@ -27,7 +27,7 @@ This makes the method easy to inspect and explain. It is not the only house syst
 
 ## Planets in House 1
 
-When a planet falls in the 1th house, traditional astrology interprets that planet's symbolism through the life themes associated with this house. The planet answers "what kind of function or drive?" while the house answers "where is that symbolism expressed?"
+When a planet falls in the 1st house, traditional astrology interprets that planet's symbolism through the life themes associated with this house. The planet answers "what kind of function or drive?" while the house answers "where is that symbolism expressed?"
 
 For example, a chart reader might combine the planet's sign, its house placement and close aspects before forming an interpretation. AstroLight follows the same layered approach in its educational explanations.
 

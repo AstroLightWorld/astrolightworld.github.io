@@ -1,0 +1,421 @@
+/* =========================================
+   AstroLight — Moon Phase Calendar
+   ========================================= */
+
+.moon-phase-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 22px 80px;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.moon-phase-hero {
+  padding: 34px 0 28px;
+}
+
+.moon-phase-eyebrow {
+  letter-spacing: .14em;
+  font-size: .76rem;
+  opacity: .7;
+  margin-bottom: 10px;
+}
+
+.moon-phase-hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.moon-phase-lede {
+  max-width: 760px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  opacity: .86;
+}
+
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+.moon-phase-section {
+  margin-top: 34px;
+}
+
+.moon-phase-section h2 {
+  margin-bottom: 16px;
+}
+
+
+/* =========================================
+   CURRENT MOON
+   ========================================= */
+
+.moon-current-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 18px;
+  align-items: center;
+
+  padding: 28px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-current-symbol {
+  grid-row: span 2;
+
+  font-size: 3.2rem;
+}
+
+.moon-current-card h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.moon-current-card p {
+  margin: 5px 0;
+}
+
+.moon-current-metrics {
+  grid-column: 1 / -1;
+
+  display: grid;
+  gap: 7px;
+
+  margin-top: 18px;
+
+  font-size: .92rem;
+  opacity: .82;
+}
+
+.moon-next-phase {
+  grid-column: 1 / -1;
+
+  margin-top: 18px !important;
+
+  padding: 14px 16px;
+
+  border-radius: 11px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-timestamp {
+  grid-column: 1 / -1;
+
+  margin-top: 14px !important;
+
+  font-size: .8rem;
+
+  opacity: .55;
+}
+
+
+/* =========================================
+   TRADITIONAL ASTROLOGY
+   ========================================= */
+
+.moon-meaning-card {
+  padding: 28px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-meaning-card h3 {
+  margin-top: 0;
+}
+
+.moon-meaning-card > p {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.moon-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+
+  margin: 24px 0;
+}
+
+.moon-impact-block {
+  padding: 20px;
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.025);
+}
+
+.moon-impact-label {
+  margin: 0 0 12px !important;
+
+  font-size: .72rem;
+  letter-spacing: .12em;
+  font-weight: 700;
+
+  opacity: .62;
+}
+
+.moon-impact-block ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.moon-impact-block li {
+  margin-bottom: 9px;
+
+  line-height: 1.55;
+}
+
+.moon-disclaimer {
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,.08);
+
+  font-size: .86rem;
+
+  opacity: .68;
+}
+
+
+/* =========================================
+   YEAR SELECTOR
+   ========================================= */
+
+.moon-year-form {
+  display: flex;
+  align-items: end;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.moon-year-form label {
+  display: grid;
+  gap: 7px;
+
+  font-weight: 600;
+}
+
+.moon-year-form input {
+  width: 130px;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  background: rgba(0,0,0,.2);
+
+  color: inherit;
+}
+
+.moon-year-form button {
+  padding: 11px 16px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   PHASE EVENTS
+   ========================================= */
+
+#moon-phases {
+  display: grid;
+  gap: 14px;
+}
+
+.moon-phase-event {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+
+  gap: 18px;
+
+  padding: 22px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-event-number {
+  font-size: 1.4rem;
+  opacity: .45;
+}
+
+.moon-phase-event h3 {
+  margin: 0 0 8px;
+}
+
+.moon-phase-event p {
+  margin: 6px 0;
+
+  line-height: 1.55;
+}
+
+.moon-event-utc {
+  font-size: .84rem;
+
+  opacity: .65;
+}
+
+.moon-empty,
+.moon-error {
+  padding: 20px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-error {
+  border: 1px solid rgba(255,100,100,.35);
+}
+
+
+/* =========================================
+   METHODOLOGY
+   ========================================= */
+
+.moon-method-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.moon-method-card {
+  padding: 20px;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.035);
+}
+
+.moon-method-card > span {
+  font-size: .75rem;
+
+  letter-spacing: .12em;
+
+  opacity: .5;
+}
+
+.moon-method-card h3 {
+  margin: 9px 0;
+
+  font-size: 1rem;
+}
+
+.moon-method-card p {
+  font-size: .9rem;
+
+  line-height: 1.55;
+
+  opacity: .76;
+}
+
+.moon-important {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border-left: 3px solid currentColor;
+
+  background: rgba(255,255,255,.03);
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .moon-impact-grid,
+  .moon-method-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 560px) {
+
+  .moon-phase-page {
+    padding: 32px 16px 60px;
+  }
+
+  .moon-current-card {
+    grid-template-columns: 1fr;
+  }
+
+  .moon-current-symbol {
+    grid-row: auto;
+  }
+
+  .moon-year-form {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .moon-year-form input,
+  .moon-year-form button {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .moon-phase-event {
+    grid-template-columns: 1fr;
+  }
+
+  .moon-impact-grid,
+  .moon-method-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    scroll-behavior: auto !important;
+  }
+
+}

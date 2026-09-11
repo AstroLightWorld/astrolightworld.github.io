@@ -1,0 +1,128 @@
+{{ define "main" }}
+{{ $css := resources.Get "css/birth-chart-landing.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<article class="birth-landing">
+  <section class="birth-landing__hero">
+    <div class="birth-landing__hero-copy">
+      <div class="birth-landing__eyebrow">BIRTH CHART</div>
+      <h1>Discover the sky at the moment you were born.</h1>
+      <p>Calculate your planetary positions, Ascendant, houses and aspects — then explore how AstroLight turns those coordinates into a transparent astrological reading.</p>
+      <div class="birth-landing__actions">
+        <a class="birth-landing__button birth-landing__button--primary" href="#calculator">Generate My Birth Chart ↓</a>
+        <a class="birth-landing__button birth-landing__button--secondary" href="#learn">How It Works</a>
+      </div>
+    </div>
+    <div class="birth-landing__orb" aria-hidden="true">
+      <div class="birth-landing__orb-ring birth-landing__orb-ring--one"></div>
+      <div class="birth-landing__orb-ring birth-landing__orb-ring--two"></div>
+      <div class="birth-landing__orb-core">☉</div>
+      <span class="birth-landing__star birth-landing__star--one">✦</span>
+      <span class="birth-landing__star birth-landing__star--two">✧</span>
+      <span class="birth-landing__star birth-landing__star--three">·</span>
+    </div>
+  </section>
+
+  <section class="birth-landing__calculator" id="calculator">
+    <div class="birth-landing__section-heading">
+      <div>
+        <span class="birth-landing__eyebrow">CALCULATOR</span>
+        <h2>Generate your birth chart</h2>
+      </div>
+      <p>Use your most accurate birth time and location for the clearest house and Ascendant calculation.</p>
+    </div>
+    <div class="birth-landing__calculator-shell">
+      {{ .Content | safeHTML }}
+    </div>
+  </section>
+
+  <section class="birth-landing__features">
+    <div class="birth-landing__section-heading birth-landing__section-heading--center">
+      <span class="birth-landing__eyebrow">WHAT YOU CAN EXPLORE</span>
+      <h2>Four layers of a birth chart</h2>
+      <p>Read the chart from the big picture to the finer relationships between placements.</p>
+    </div>
+    <div class="birth-landing__feature-grid">
+      <a class="birth-landing__feature-card" href="{{ "birth-chart/guide/planets/" | relURL }}">
+        <span class="birth-landing__feature-icon">☉</span>
+        <span class="birth-landing__feature-number">01</span>
+        <h3>Planets</h3>
+        <p>What planetary function or theme is being described?</p>
+        <span class="birth-landing__arrow">Explore planets →</span>
+      </a>
+      <a class="birth-landing__feature-card" href="{{ "birth-chart/guide/houses/" | relURL }}">
+        <span class="birth-landing__feature-icon">⌂</span>
+        <span class="birth-landing__feature-number">02</span>
+        <h3>Houses</h3>
+        <p>Where in the chart is that symbolism traditionally expressed?</p>
+        <span class="birth-landing__arrow">Explore houses →</span>
+      </a>
+      <a class="birth-landing__feature-card" href="{{ "learn/rising-sign/" | relURL }}">
+        <span class="birth-landing__feature-icon">↑</span>
+        <span class="birth-landing__feature-number">03</span>
+        <h3>Rising Sign</h3>
+        <p>See how the Ascendant anchors the house framework.</p>
+        <span class="birth-landing__arrow">Learn about rising signs →</span>
+      </a>
+      <a class="birth-landing__feature-card" href="{{ "birth-chart/guide/nakshatras/" | relURL }}">
+        <span class="birth-landing__feature-icon">✦</span>
+        <span class="birth-landing__feature-number">04</span>
+        <h3>Nakshatras</h3>
+        <p>Explore the sidereal Moon's Nakshatra and four padas.</p>
+        <span class="birth-landing__arrow">Explore Nakshatras →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="birth-landing__method" id="learn">
+    <div class="birth-landing__method-copy">
+      <span class="birth-landing__eyebrow">HOW ASTROLIGHT WORKS</span>
+      <h2>Calculation first.<br><em>Interpretation second.</em></h2>
+      <p>AstroLight keeps the astronomical calculation layer visible instead of treating astrological meanings as if they were measurements.</p>
+    </div>
+    <div class="birth-landing__pipeline">
+      <div><span>01</span><strong>Birth data</strong><small>Date · time · location</small></div>
+      <i>→</i>
+      <div><span>02</span><strong>Astronomy</strong><small>Planetary coordinates</small></div>
+      <i>→</i>
+      <div><span>03</span><strong>Chart structure</strong><small>Ascendant · houses · aspects</small></div>
+      <i>→</i>
+      <div><span>04</span><strong>Interpretation</strong><small>Traditional framework</small></div>
+    </div>
+  </section>
+
+  <section class="birth-landing__modes">
+    <div class="birth-landing__section-heading birth-landing__section-heading--center">
+      <span class="birth-landing__eyebrow">TWO CHART FRAMEWORKS</span>
+      <h2>Choose how you want to explore</h2>
+    </div>
+    <div class="birth-landing__mode-grid">
+      <div class="birth-landing__mode-card">
+        <div class="birth-landing__mode-symbol">♈</div>
+        <div>
+          <span class="birth-landing__mode-label">WESTERN</span>
+          <h3>Tropical astrology</h3>
+          <p>Explore planetary positions in AstroLight's primary Western/Tropical framework.</p>
+        </div>
+      </div>
+      <div class="birth-landing__mode-card birth-landing__mode-card--vedic">
+        <div class="birth-landing__mode-symbol">✦</div>
+        <div>
+          <span class="birth-landing__mode-label">VEDIC</span>
+          <h3>Sidereal astrology</h3>
+          <p>Explore sidereal positions plus the Moon's Nakshatra and pada in Vedic mode.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="birth-landing__learn" id="learn-more">
+    <div>
+      <span class="birth-landing__eyebrow">LEARN</span>
+      <h2>Want to understand your results?</h2>
+      <p>Use the Birth Chart Guide alongside your generated chart, then dive deeper into individual planets, houses and Nakshatras.</p>
+    </div>
+    <a class="birth-landing__button birth-landing__button--primary" href="{{ "birth-chart/guide/" | relURL }}">Read the Birth Chart Guide →</a>
+  </section>
+</article>
+{{ end }}

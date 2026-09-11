@@ -2,12 +2,12 @@
 title: "The 3rd House: Communication"
 layout: "house-single"
 house: "3"
-description: "Learn what the 3th house represents in traditional astrology and how planets placed there are interpreted."
+description: "Learn what the 3rd house represents in traditional astrology and how planets placed there are interpreted."
 ---
 
 ## House 3: Communication
 
-In traditional astrology, the houses divide a birth chart into twelve symbolic areas. The **3th house** is associated with **Communication**.
+In traditional astrology, the houses divide a birth chart into twelve symbolic areas. The **3rd house** is associated with **Communication**.
 
 Common themes include:
 
@@ -27,7 +27,7 @@ This makes the method easy to inspect and explain. It is not the only house syst
 
 ## Planets in House 3
 
-When a planet falls in the 3th house, traditional astrology interprets that planet's symbolism through the life themes associated with this house. The planet answers "what kind of function or drive?" while the house answers "where is that symbolism expressed?"
+When a planet falls in the 3rd house, traditional astrology interprets that planet's symbolism through the life themes associated with this house. The planet answers "what kind of function or drive?" while the house answers "where is that symbolism expressed?"
 
 For example, a chart reader might combine the planet's sign, its house placement and close aspects before forming an interpretation. AstroLight follows the same layered approach in its educational explanations.
 
