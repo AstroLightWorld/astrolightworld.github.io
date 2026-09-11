@@ -1,9 +1,10 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy AstroLight to GitHub Pages
 
 on:
   push:
     branches:
       - main
+
   workflow_dispatch:
 
 permissions:
@@ -13,11 +14,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
-
-defaults:
-  run:
-    shell: pwsh
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -39,7 +36,7 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
