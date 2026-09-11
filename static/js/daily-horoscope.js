@@ -15,20 +15,20 @@
 
 import {
   generateDailyProfile
-} from "/astrolight/js/horoscope/daily-profile.js";
+} from "./horoscope/daily-profile.js";
 
 import {
   generateHoroscopeProse
-} from "/astrolight/js/horoscope/prose.js";
+} from "./horoscope/prose.js";
 
 import {
   interpretCareerSection
-} from "/astrolight/js/horoscope/sections/career.js";
+} from "./horoscope/sections/career.js";
 
 import {
   generateCareerProse,
   CAREER_PROSE_VERSION
-} from "/astrolight/js/horoscope/career-prose.js";
+} from "./horoscope/career-prose.js";
 
 
 const SECTION_LABELS = {
