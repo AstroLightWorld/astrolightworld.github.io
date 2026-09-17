@@ -1,57 +1,147 @@
 {{ define "main" }}
+
 {{ $sign := .Params.sign }}
+{{ $period := .Params.period | default "daily" }}
 {{ $data := index site.Data.zodiac $sign }}
 
 <article class="content-page horoscope-page">
 
-  <p class="eyebrow">DAILY HOROSCOPE</p>
+  {{ if eq $period "weekly" }}
 
-  <h1>{{ $data.symbol }} {{ $data.name }} Daily Horoscope</h1>
+    <p class="eyebrow">WEEKLY HOROSCOPE</p>
 
-  <div
-    id="horoscope-text"
-    class="quote-panel"
-    data-sign="{{ $sign }}"
-    data-period="daily"
-  >
-    <p>Calculating today's horoscope…</p>
-  </div>
+    <h1>{{ $data.symbol }} {{ $data.name }} Weekly Horoscope</h1>
 
-  <h2>How to use this horoscope</h2>
+    <div
+      id="horoscope-text"
+      class="quote-panel"
+      data-sign="{{ $sign }}"
+      data-period="weekly"
+    >
+      <p>Calculating this week's horoscope…</p>
+    </div>
 
-  <p>
-    This daily reading is calculated from the current astronomical
-    positions of the planets and interpreted through AstroLight's
-    Western/Tropical Sun-sign framework. It is intended as a reflective
-    astrological reading, not a scientific prediction or guarantee.
-  </p>
+    <h2>How to use this horoscope</h2>
 
-  <p>
-    {{ $data.name }} is traditionally associated with the
-    {{ $data.element }} element,
-    {{ $data.modality }} modality and
-    {{ $data.ruling_planet }}.
-    For a more personalized calculation, use the
-    <a href="{{ "birth-chart/" | relURL }}">birth-chart tool</a>.
-  </p>
+    <p>
+      This weekly reading is calculated by sampling astronomical positions
+      across a seven-day period and interpreting them through AstroLight's
+      Western/Tropical Sun-sign framework. It is intended as a reflective
+      astrological reading, not a scientific prediction or guarantee.
+    </p>
 
-  <h2>Learn more about {{ $data.name }}</h2>
+    <p>
+      {{ $data.name }} is traditionally associated with the
+      {{ $data.element }} element,
+      {{ $data.modality }} modality and
+      {{ $data.ruling_planet }}.
+      For a more personalized calculation, use the
+      <a href="{{ "birth-chart/" | relURL }}">birth-chart tool</a>.
+    </p>
 
-  <p>
-    <a href="{{ printf "zodiac/%s/" $sign | relURL }}">
-      Read the full {{ $data.name }} profile →
-    </a>
-  </p>
+    <h2>Learn more about {{ $data.name }}</h2>
+
+    <p>
+      <a href="{{ printf "zodiac/%s/" $sign | relURL }}">
+        Read the full {{ $data.name }} profile →
+      </a>
+    </p>
+
+  {{ else if eq $period "yearly" }}
+
+    <p class="eyebrow">YEARLY HOROSCOPE</p>
+
+    <h1>{{ $data.symbol }} {{ $data.name }} Yearly Horoscope</h1>
+
+    <div
+      id="horoscope-text"
+      class="quote-panel"
+      data-sign="{{ $sign }}"
+      data-period="yearly"
+    >
+      <p>Calculating this year's horoscope…</p>
+    </div>
+
+    <h2>Learn more about {{ $data.name }}</h2>
+
+    <p>
+      <a href="{{ printf "zodiac/%s/" $sign | relURL }}">
+        Read the full {{ $data.name }} profile →
+      </a>
+    </p>
+
+  {{ else }}
+
+    {{/* EXISTING DAILY HOROSCOPE — DO NOT CHANGE LOGIC */}}
+
+    <p class="eyebrow">DAILY HOROSCOPE</p>
+
+    <h1>{{ $data.symbol }} {{ $data.name }} Daily Horoscope</h1>
+
+    <div
+      id="horoscope-text"
+      class="quote-panel"
+      data-sign="{{ $sign }}"
+      data-period="daily"
+    >
+      <p>Calculating today's horoscope…</p>
+    </div>
+
+    <h2>How to use this horoscope</h2>
+
+    <p>
+      This daily reading is calculated from the current astronomical
+      positions of the planets and interpreted through AstroLight's
+      Western/Tropical Sun-sign framework. It is intended as a reflective
+      astrological reading, not a scientific prediction or guarantee.
+    </p>
+
+    <p>
+      {{ $data.name }} is traditionally associated with the
+      {{ $data.element }} element,
+      {{ $data.modality }} modality and
+      {{ $data.ruling_planet }}.
+      For a more personalized calculation, use the
+      <a href="{{ "birth-chart/" | relURL }}">birth-chart tool</a>.
+    </p>
+
+    <h2>Learn more about {{ $data.name }}</h2>
+
+    <p>
+      <a href="{{ printf "zodiac/%s/" $sign | relURL }}">
+        Read the full {{ $data.name }} profile →
+      </a>
+    </p>
+
+  {{ end }}
 
 </article>
 
 <script
-  src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"
-></script>
+    src="{{ "js/vendor/astronomy.browser.min.js" | relURL }}">
+</script>
 
-<script
-  type="module"
-  src="{{ "js/daily-horoscope.js" | relURL }}"
-></script>
+{{ if eq $period "weekly" }}
+
+  <script
+    type="module"
+    src="{{ "js/horoscope/weekly-horoscope.js" | relURL }}?v={{ now.UnixNano }}">
+  </script>
+
+{{ else if eq $period "yearly" }}
+
+  <script
+    type="module"
+    src="{{ "js/horoscope/yearly-horoscope.js" | relURL }}">
+  </script>
+
+{{ else }}
+
+  <script
+    type="module"
+    src="{{ "js/daily-horoscope.js" | relURL }}">
+  </script>
+
+{{ end }}
 
 {{ end }}

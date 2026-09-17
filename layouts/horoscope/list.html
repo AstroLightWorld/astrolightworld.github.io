@@ -1,125 +1,242 @@
 {{ define "main" }}
 
-<main class="content-page horoscope-index-page">
+<main class="content-page horoscope-landing-page">
 
-  <section class="horoscope-index-hero">
+  <!-- =====================================================
+       HOROSCOPE HERO
+       ===================================================== -->
 
-    <p class="eyebrow">DAILY HOROSCOPES</p>
+  <section class="horoscope-landing-hero">
+
+    <p class="eyebrow">ASTROLIGHT HOROSCOPE</p>
 
     <h1>
-      Your day,
+      Read the sky
       <br>
-      interpreted from the sky.
+      across time.
     </h1>
 
-    <p class="horoscope-index-intro">
-      AstroLight calculates the current planetary positions and
-      applies a transparent set of Sun-sign interpretation rules
-      to create a deterministic daily horoscope for each zodiac sign.
+    <p class="horoscope-landing-intro">
+      Explore AstroLight horoscope interpretations across daily,
+      weekly and yearly time scales, built from the same
+      deterministic astrological interpretation engine.
     </p>
 
   </section>
 
-  <section class="horoscope-signs">
 
-    <div class="horoscope-sign-grid">
+  <!-- =====================================================
+       HOROSCOPE MODES
+       ===================================================== -->
 
-      {{ $signs := slice
-        "aries"
-        "taurus"
-        "gemini"
-        "cancer"
-        "leo"
-        "virgo"
-        "libra"
-        "scorpio"
-        "sagittarius"
-        "capricorn"
-        "aquarius"
-        "pisces"
-      }}
+  <section class="horoscope-modes">
 
-      {{ range $signs }}
+    <p class="eyebrow">CHOOSE YOUR READING</p>
 
-        {{ $sign := . }}
-        {{ $data := index site.Data.zodiac $sign }}
+    <div class="horoscope-mode-grid">
 
-        <a
-          href="{{ site.Home.RelPermalink }}horoscope/daily/{{ $sign }}/"
-          class="horoscope-sign-card"
-        >
 
-          <span class="horoscope-sign-symbol">
-            {{ $data.symbol }}
+      <!-- DAILY -->
+
+      <a
+        href="{{ "horoscope/daily/" | relURL }}"
+        class="horoscope-mode-card horoscope-mode-daily"
+      >
+
+        <div class="horoscope-mode-icon">
+          ☀
+        </div>
+
+        <div class="horoscope-mode-content">
+
+          <span class="horoscope-mode-label">
+            DAILY
           </span>
 
-          <div>
-            <p class="horoscope-sign-name">
-              {{ $data.name }}
-            </p>
+          <h2>
+            Daily Horoscope
+          </h2>
 
-            <small>
-              {{ $data.dates }}
-            </small>
-          </div>
+          <p>
+            Explore today's planetary influences,
+            interpretations and guidance for each
+            Sun sign.
+          </p>
 
-          <strong>→</strong>
+          <span class="horoscope-mode-meta">
+            12 Sun Signs
+          </span>
 
-        </a>
+        </div>
 
-      {{ end }}
+        <strong class="horoscope-mode-arrow">
+          →
+        </strong>
+
+      </a>
+
+
+      <!-- WEEKLY -->
+
+      <a
+        href="{{ "horoscope/weekly/" | relURL }}"
+        class="horoscope-mode-card horoscope-mode-weekly"
+      >
+
+        <div class="horoscope-mode-icon">
+          ◌
+        </div>
+
+        <div class="horoscope-mode-content">
+
+          <span class="horoscope-mode-label">
+            WEEKLY
+          </span>
+
+          <h2>
+            Weekly Horoscope
+          </h2>
+
+          <p>
+            Discover seven-day patterns synthesized
+            from Daily readings, recurring themes,
+            planetary evidence and aspects.
+          </p>
+
+          <span class="horoscope-mode-meta">
+            7-Day Synthesis · 12 Sun Signs
+          </span>
+
+        </div>
+
+        <strong class="horoscope-mode-arrow">
+          →
+        </strong>
+
+      </a>
+
+
+      <!-- YEARLY -->
+
+      <a
+        href="{{ "horoscope/yearly/" | relURL }}"
+        class="horoscope-mode-card horoscope-mode-yearly"
+      >
+
+        <div class="horoscope-mode-icon">
+          ✦
+        </div>
+
+        <div class="horoscope-mode-content">
+
+          <span class="horoscope-mode-label">
+            YEARLY
+          </span>
+
+          <h2>
+            Yearly Horoscope
+          </h2>
+
+          <p>
+            Explore broader astrological patterns,
+            themes and long-term interpretations
+            across the year.
+          </p>
+
+          <span class="horoscope-mode-meta">
+            Yearly Synthesis · 12 Sun Signs
+          </span>
+
+        </div>
+
+        <strong class="horoscope-mode-arrow">
+          →
+        </strong>
+
+      </a>
+
 
     </div>
 
   </section>
 
-  <section class="horoscope-methodology">
 
-    <p class="eyebrow">HOW IT WORKS</p>
+  <!-- =====================================================
+       HOW ASTROLIGHT HOROSCOPES WORK
+       ===================================================== -->
+
+  <section class="horoscope-landing-methodology">
+
+    <p class="eyebrow">HOW ASTROLIGHT WORKS</p>
 
     <h2>
-      Calculated from the sky,
-      not randomly generated.
+      One interpretation engine,
+      multiple time scales.
     </h2>
 
     <p>
-      Each daily horoscope begins with calculated planetary positions
-      for the current date. AstroLight then evaluates planetary
-      sign relationships, active aspects and predefined
-      interpretation rules for the selected Sun sign.
+      AstroLight begins with calculated planetary positions
+      and applies deterministic interpretation rules. Daily
+      readings provide the foundational signals that can then
+      be synthesized into longer time-scale interpretations.
     </p>
 
-    <div class="horoscope-method-grid">
+
+    <div class="horoscope-landing-method-grid">
+
 
       <div>
+
         <span>01</span>
-        <h3>Planetary positions</h3>
+
+        <h3>
+          Daily
+        </h3>
+
         <p>
-          Celestial positions are calculated using Astronomy Engine.
+          Planetary positions, relationships, aspects and
+          interpretation rules produce the Daily profile.
         </p>
+
       </div>
 
+
       <div>
+
         <span>02</span>
-        <h3>Astrological relationships</h3>
+
+        <h3>
+          Weekly
+        </h3>
+
         <p>
-          Planetary signs and aspects are evaluated relative to
-          the reader's Sun sign.
+          Seven Daily profiles are preserved as evidence and
+          synthesized into recurring weekly patterns.
         </p>
+
       </div>
 
+
       <div>
+
         <span>03</span>
-        <h3>Daily interpretation</h3>
+
+        <h3>
+          Yearly
+        </h3>
+
         <p>
-          Deterministic interpretation rules turn those signals
-          into a daily reading.
+          Longer time-scale readings build on the same
+          underlying astrological evidence model.
         </p>
+
       </div>
+
 
     </div>
 
   </section>
+
 
 </main>
 

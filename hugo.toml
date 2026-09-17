@@ -14,7 +14,7 @@ enableRobotsTXT = true
     weight = 1
   [[menu.main]]
     name = "Horoscopes"
-    url = "/horoscope/daily/"
+    url = "/horoscope/"
     weight = 2
   [[menu.main]]
     name = "Compatibility"
