@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+<main class="content-page horoscope-index-page">
+
+  <section class="horoscope-index-hero">
+
+    <p class="eyebrow">DAILY HOROSCOPES</p>
+
+    <h1>
+      Your day,
+      <br>
+      interpreted from the sky.
+    </h1>
+
+    <p class="horoscope-index-intro">
+      AstroLight calculates the current planetary positions and
+      applies a transparent set of Sun-sign interpretation rules
+      to create a deterministic daily horoscope for each zodiac sign.
+    </p>
+
+  </section>
+
+  <section class="horoscope-signs">
+
+    <div class="horoscope-sign-grid">
+
+      {{ $signs := slice
+        "aries"
+        "taurus"
+        "gemini"
+        "cancer"
+        "leo"
+        "virgo"
+        "libra"
+        "scorpio"
+        "sagittarius"
+        "capricorn"
+        "aquarius"
+        "pisces"
+      }}
+
+      {{ range $signs }}
+
+        {{ $sign := . }}
+        {{ $data := index site.Data.zodiac $sign }}
+
+        <a
+          href="{{ site.Home.RelPermalink }}horoscope/daily/{{ $sign }}/"
+          class="horoscope-sign-card"
+        >
+
+          <span class="horoscope-sign-symbol">
+            {{ $data.symbol }}
+          </span>
+
+          <div>
+            <p class="horoscope-sign-name">
+              {{ $data.name }}
+            </p>
+
+            <small>
+              {{ $data.dates }}
+            </small>
+          </div>
+
+          <strong>→</strong>
+
+        </a>
+
+      {{ end }}
+
+    </div>
+
+  </section>
+
+  <section class="horoscope-methodology">
+
+    <p class="eyebrow">HOW IT WORKS</p>
+
+    <h2>
+      Calculated from the sky,
+      not randomly generated.
+    </h2>
+
+    <p>
+      Each daily horoscope begins with calculated planetary positions
+      for the current date. AstroLight then evaluates planetary
+      sign relationships, active aspects and predefined
+      interpretation rules for the selected Sun sign.
+    </p>
+
+    <div class="horoscope-method-grid">
+
+      <div>
+        <span>01</span>
+        <h3>Planetary positions</h3>
+        <p>
+          Celestial positions are calculated using Astronomy Engine.
+        </p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <h3>Astrological relationships</h3>
+        <p>
+          Planetary signs and aspects are evaluated relative to
+          the reader's Sun sign.
+        </p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <h3>Daily interpretation</h3>
+        <p>
+          Deterministic interpretation rules turn those signals
+          into a daily reading.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+{{ end }}

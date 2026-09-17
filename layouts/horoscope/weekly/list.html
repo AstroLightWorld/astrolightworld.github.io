@@ -1,0 +1,102 @@
+{{ define "main" }}
+
+<main class="content-page horoscope-period-page">
+
+  <section class="horoscope-period-hero">
+
+    <p class="eyebrow">WEEKLY HOROSCOPES</p>
+
+    <h1>
+      Seven days,
+      <br>
+      interpreted together.
+    </h1>
+
+    <p class="horoscope-period-intro">
+      Explore seven-day horoscope interpretations synthesized
+      from seven Daily readings, recurring themes, planetary
+      evidence and active aspects.
+    </p>
+
+  </section>
+
+
+  <section class="horoscope-period-signs">
+
+    <p class="eyebrow">12 SUN SIGNS</p>
+
+    <div class="horoscope-sign-grid">
+
+      {{ $signs := slice
+        "aries"
+        "taurus"
+        "gemini"
+        "cancer"
+        "leo"
+        "virgo"
+        "libra"
+        "scorpio"
+        "sagittarius"
+        "capricorn"
+        "aquarius"
+        "pisces"
+      }}
+
+      {{ range $signs }}
+
+        {{ $sign := . }}
+        {{ $data := index site.Data.zodiac $sign }}
+
+        <a
+          href="{{ site.Home.RelPermalink }}horoscope/weekly/{{ $sign }}/"
+          class="horoscope-sign-card"
+        >
+
+          <span class="horoscope-sign-symbol">
+            {{ $data.symbol }}
+          </span>
+
+          <div>
+
+            <p class="horoscope-sign-name">
+              {{ $data.name }}
+            </p>
+
+            <small>
+              {{ $data.dates }}
+            </small>
+
+          </div>
+
+          <strong>→</strong>
+
+        </a>
+
+      {{ end }}
+
+    </div>
+
+  </section>
+
+
+  <section class="horoscope-period-methodology">
+
+    <p class="eyebrow">WEEKLY METHOD</p>
+
+    <h2>
+      Seven Daily readings become
+      one weekly synthesis.
+    </h2>
+
+    <p>
+      The Weekly Horoscope does not replace or modify the Daily
+      interpretation engine. It samples seven Daily profiles,
+      preserves their evidence and synthesizes recurring
+      categories, themes, planetary influences and aspects.
+    </p>
+
+  </section>
+
+</main>
+
+{{ end }}
