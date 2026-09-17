@@ -21,6 +21,5 @@ When reporting a technical issue, please include:
 
 For content corrections, quote the relevant heading or sentence and explain what should be changed.
 
-**Contact email:** `contact@yourdomain.example`
+**Contact email:** `mankeshwaracreations@gmail.com`
 
-Replace the placeholder address above with the project's real monitored email address before launch.
