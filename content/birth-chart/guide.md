@@ -1,3 +1,9 @@
+---
+title: "Birth Chart Guide: How to Read Your Birth Chart"
+description: "A step-by-step guide to reading a birth chart: the Sun, Moon and Ascendant, signs, planets, houses and aspects, explained calculation-first."
+layout: "guide"
+---
+
 # How to Read a Birth Chart
 
 A birth chart is easiest to understand when you separate **where something is** from **what an astrology tradition says it means**.
@@ -86,7 +92,7 @@ The traditional themes used in AstroLight’s educational explanations are inten
 
 These are interpretive themes rather than scientific measurements.
 
-[Explore the planets →](guide/planets/)
+[Explore the planets →](../planets/)
 
 ## Houses: where the symbolism is expressed
 
@@ -111,7 +117,7 @@ In AstroLight’s current public birth-chart calculator, the **Equal House** mod
 
 A house is not a physical object in the sky. It is a coordinate framework calculated from the observer’s location and time, then interpreted through an astrological tradition.
 
-[Explore the twelve houses →](guide/houses/)
+[Explore the twelve houses →](../houses/)
 
 ## How to read a planet in a house
 
@@ -227,7 +233,7 @@ This means the same astronomical planetary position can receive a different zodi
 
 [Learn how Nakshatras work →](../../learn/astrology-math/how-nakshatras-work/)
 
-[Explore the 27 Nakshatras →](guide/nakshatras/)
+[Explore the 27 Nakshatras →](../nakshatras/)
 
 ## How AstroLight calculates a chart
 
@@ -296,9 +302,9 @@ Look for themes that appear in more than one place. A repeated theme across a pl
 
 Continue with the detailed reference pages:
 
-- [Planets →](guide/planets/)
-- [Houses →](guide/houses/)
-- [Nakshatras →](guide/nakshatras/)
+- [Planets →](../planets/)
+- [Houses →](../houses/)
+- [Nakshatras →](../nakshatras/)
 - [Rising Sign →](../../learn/rising-sign/)
 - [Moon Signs →](../../learn/moon-signs/)
 - [Elements & Modalities →](../../learn/elements-and-modalities/)
