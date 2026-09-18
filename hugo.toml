@@ -5,7 +5,7 @@ enableRobotsTXT = true
 
 [params]
   description = "Explore zodiac signs, birth charts, planetary positions, nakshatras and the mathematics behind astrology."
-  adsenseClientId = ""
+  adsenseClientId = "ca-pub-8700847026980523"
 
 [menu]
   [[menu.main]]
